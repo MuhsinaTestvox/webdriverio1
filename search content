@@ -1,0 +1,24 @@
+describe('ebay product search ', () => {
+    it ('should open the main url and verify the title',() =>{
+        Browser.url (https://www.ebay.com/);
+        expect(browser). toHaveTitle('Electronics,Cars,fashion,Collection & More eBay');
+
+    });
+    it ('should search for a product and verify the product search value', () {
+        const searchInput =$ ('#gh-ac');
+        const searchBtn = $('#gh-btn');
+        searchInput.addValue('Laptop');
+        searchBtn.click();
+
+        expect(searchInput).toHaveValue('Laptop');
+
+    });
+    it ('should redirect to a new page and verify the title', () => {
+        expet(browser).toHaveTitle ('Laptop|ebay');
+
+    });
+    it ('should update search category', () =>{
+        const category =$('#gh-cat option:nth-child(1)');
+    })
+
+});
